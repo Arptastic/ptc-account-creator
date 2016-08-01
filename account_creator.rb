@@ -57,7 +57,7 @@ def create_account
 	final_signup_form_response = httpclient.get(final_signup_url)
 
 	o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
-	username = (0...12).map { o[rand(o.length)] }.join
+	username = "PRESETSTUFF_#{5.times.map{ Random.rand(9) }.join}"
 	password = (0...12).map { o[rand(o.length)] }.join
 	email = "#{username.downcase}@divismail.ru"
 	md5_email = Digest::MD5.hexdigest(email)
